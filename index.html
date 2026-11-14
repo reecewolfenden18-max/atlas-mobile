@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1016"><meta name="description" content="ATLAS — Personal AI Companion">
+<title>ATLAS — Personal AI Companion</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="styles.css">
+</head><body><div class="app-shell">
+<header class="topbar"><button class="menu-btn" id="menuBtn">☰</button><div class="brand"><div class="brand-name">ATLAS<span> //</span></div><div class="brand-sub">PERSONAL INTELLIGENCE SYSTEM</div></div><div class="connection"><i></i><span>LOCAL MODE</span></div></header>
+<nav class="tabs"><button class="tab active" data-tab="chat">Chat</button><button class="tab" data-tab="projects">Projects</button><button class="tab" data-tab="memory">Memory</button><button class="tab" data-tab="settings">Settings</button></nav>
+<main>
+<section class="view active" id="view-chat">
+<section class="core-panel"><div class="core-label"><span class="pulse-dot"></span> NEURAL CORE <small id="coreState">STANDBY</small></div>
+<div class="brain-stage"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div><canvas id="brainCanvas"></canvas><div class="wave wave-left"></div><div class="wave wave-right"></div><div class="core-caption">ATLAS <span>NEURAL NETWORK</span></div></div>
+<div class="core-footer"><span><b class="tiny-dot"></b> CORE READY</span><span id="clock">--:--</span><span>SECURE LOCAL SESSION</span></div></section>
+<section class="chat-panel"><div class="section-heading"><span>CONVERSATION</span><button class="text-btn" id="clearChat">CLEAR</button></div>
+<div class="messages" id="messages" aria-live="polite"></div>
+<div class="composer"><textarea id="messageInput" rows="2" placeholder="Type a message or use the microphone…" aria-label="Message"></textarea><div class="composer-actions"><button class="icon-btn" id="micBtn" aria-label="Dictate message">🎙</button><button class="send-btn" id="saveBtn">SAVE MESSAGE ↵</button></div></div>
+<div class="chat-actions"><button class="primary-btn" id="askChatGPT">↗ ASK CHATGPT</button><button class="secondary-btn" id="speakLast">▸ READ LAST REPLY</button></div><p class="small-hint" id="voiceStatus">Voice input depends on browser support. Text always works.</p>
+</section></section>
+<section class="view" id="view-projects"><section class="content-card"><div class="section-heading"><span>PROJECT DIRECTORY</span><span class="muted">LOCAL</span></div><p class="muted intro">Track work in progress. Entries are stored on this phone.</p><div id="projectList" class="project-list"></div><div class="add-row"><input id="projectInput" placeholder="New project name"><button class="primary-btn" id="addProject">ADD +</button></div></section></section>
+<section class="view" id="view-memory"><section class="content-card"><div class="section-heading"><span>ATLAS MEMORY</span><span class="muted">ON DEVICE</span></div><p class="muted intro">Saved notes stay in this browser on this phone.</p><textarea id="memoryInput" class="memory-input" placeholder="Add a note for ATLAS to keep…"></textarea><button class="primary-btn full" id="saveMemory">SAVE TO MEMORY</button><div id="memoryList" class="memory-list"></div></section></section>
+<section class="view" id="view-settings"><section class="content-card"><div class="section-heading"><span>SYSTEM CONFIGURATION</span><span class="muted">V1.0</span></div>
+<label class="setting-row"><span><b>Speak replies aloud</b><small>Uses Android/browser text-to-speech</small></span><input type="checkbox" id="ttsToggle" checked></label>
+<label class="setting-row"><span><b>Reduced animation</b><small>Lower motion and visual effects</small></span><input type="checkbox" id="motionToggle"></label>
+<div class="setting-block"><label for="voiceSelect">Available voice</label><select id="voiceSelect"><option value="">System default</option></select><small>Choose a voice available on your phone. ATLAS uses an original synthetic voice direction, not an imitation of a film character or actor.</small></div>
+<div class="setting-block"><label>Assistant name</label><input value="ATLAS" disabled></div>
+<button class="secondary-btn full" id="exportData">EXPORT MY ATLAS DATA</button><button class="danger-btn full" id="eraseData">DELETE LOCAL ATLAS DATA</button><p class="small-hint">ATLAS v1.0 • Mobile prototype • No API key stored here.</p>
+</section></section>
+</main><footer class="footer"><span>ATLAS NETWORK</span><span>BUILD 1.0.0</span><span>LOCAL STORAGE ACTIVE</span></footer></div><div class="toast" id="toast" role="status"></div><script src="app.js"></script></body></html>
